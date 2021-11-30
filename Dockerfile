@@ -74,7 +74,7 @@ RUN chown odoo /etc/odoo/odoo.conf \
 VOLUME ["/var/lib/odoo", "/mnt/extra-addons"]
 
 # Expose Odoo services
-EXPOSE 8069 8071 8072
+EXPOSE 8080 8081 8082
 
 # Set the default config file
 ENV ODOO_RC /etc/odoo/odoo.conf
@@ -84,5 +84,6 @@ COPY wait-for-psql.py /usr/local/bin/wait-for-psql.py
 # Set default user when running the container
 USER odoo
 
+RUN ["chmod", "+x", "/usr/src/app/docker-entrypoint.sh"]
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["odoo"]
