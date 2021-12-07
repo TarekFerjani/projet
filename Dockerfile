@@ -1,3 +1,2 @@
-COPY ./docker-compose.yml /
-RUN docker-compose run 
-EXPOSE 8080
+FROM odoo:latest
+ExPOSE 8069
