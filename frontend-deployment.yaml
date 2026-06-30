@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frigo-frontend
+  namespace: frigo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frigo-frontend
+  template:
+    metadata:
+      labels:
+        app: frigo-frontend
+    spec:
+      imagePullSecrets:
+        - name: dockerhub-secret
+
+      containers:
+        - name: frontend
+          image: ferjani90/frigo_frontend:latest
+          ports:
+            - containerPort: 80
