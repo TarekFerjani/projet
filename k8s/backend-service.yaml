@@ -8,6 +8,6 @@ spec:
   selector:
     app: frigo-backend
   ports:
-    - port: 3001
-      targetPort: 3001
+    - port: 30001
+      targetPort: 30001
       nodePort: 30001
