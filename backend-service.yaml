@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frigo-backend
+  namespace: frigo
+spec:
+  type: NodePort
+  selector:
+    app: frigo-backend
+  ports:
+    - port: 3001
+      targetPort: 3001
+      nodePort: 30001
