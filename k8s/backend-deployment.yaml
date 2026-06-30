@@ -20,4 +20,4 @@ spec:
         - name: backend
           image: ferjani90/frigo_backend:latest
           ports:
-            - containerPort: 3001
+            - containerPort: 30001
