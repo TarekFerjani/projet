@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frigo-frontend
+  namespace: frigo
+spec:
+  rules:
+  - host: frigo.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frigo-frontend
+            port:
+              number: 80
